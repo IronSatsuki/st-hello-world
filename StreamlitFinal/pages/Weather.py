@@ -1,10 +1,22 @@
 import streamlit as st
 import requests
-
+import webbrowser
 api_key = "fbef48545e72b7183786f15c0ab091e4"
 
 url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}'
 url_1 = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat={}&lon={}&dt={}&appid={}'
+url2 = "https://app-hsfdonation.heartandstroke.ca/?pagename=DMDonationForm&s_locale=en_CA&s_fT=cont&s_pres=hsweb&s_cscid=hsweb_nav"
+url3 = "https://www.heartandstroke.ca/stroke/what-is-stroke"
+url4 = "https://www.heartandstroke.ca/heart-disease/what-is-heart-disease"
+st.sidebar.title("Links")
+
+if st.sidebar.button('Donate'):
+    webbrowser.open_new_tab(url2)
+if st.sidebar.button('Stroke Infomation'):
+    webbrowser.open_new_tab(url3)
+if st.sidebar.button('Heart disease Infomation'):
+    webbrowser.open_new_tab(url4)
+
 
 def getweather(city):
     result = requests.get(url.format(city, api_key))     
