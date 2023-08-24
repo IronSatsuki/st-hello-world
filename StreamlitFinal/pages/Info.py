@@ -27,7 +27,7 @@ st.info("This project was made for the [Heart and Stroke Foundation](%s)" % url)
 
 st.text("There are ways to know if you are having a stroke:")
 
-st.image("fast.png")
+st.image("StreamlitFinal/fast.png")
 
 colored_header(
     label="Risks",

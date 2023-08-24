@@ -3,10 +3,20 @@ import streamlit as st
 import pandas as pd
 import re
 from streamlit_extras.colored_header import colored_header
-
+import webbrowser
 
 from streamlit_folium import st_folium 
+url2 = "https://app-hsfdonation.heartandstroke.ca/?pagename=DMDonationForm&s_locale=en_CA&s_fT=cont&s_pres=hsweb&s_cscid=hsweb_nav"
+url3 = "https://www.heartandstroke.ca/stroke/what-is-stroke"
+url4 = "https://www.heartandstroke.ca/heart-disease/what-is-heart-disease"
+st.sidebar.title("Links")
 
+if st.sidebar.button('Donate'):
+    webbrowser.open_new_tab(url2)
+if st.sidebar.button('Stroke Infomation'):
+    webbrowser.open_new_tab(url3)
+if st.sidebar.button('Heart disease Infomation'):
+    webbrowser.open_new_tab(url4)
 
 
 
@@ -24,7 +34,7 @@ colored_header(
 )
 
 
-df = pd.read_excel("pages\CombinedSheetCleanedv3.xlsx", dtype=str)
+df = pd.read_excel("StreamlitFinal\pages\CombinedSheetCleanedv3.xlsx", dtype=str)
 
 
 
